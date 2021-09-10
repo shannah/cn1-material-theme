@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/materialtheme.iml" filepath="$PROJECT_DIR$/.idea/materialtheme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/materialtheme-android.iml" filepath="$PROJECT_DIR$/android/materialtheme-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/materialtheme-common.iml" filepath="$PROJECT_DIR$/common/materialtheme-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/materialtheme-ios.iml" filepath="$PROJECT_DIR$/ios/materialtheme-ios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase/materialtheme-javase.iml" filepath="$PROJECT_DIR$/javase/materialtheme-javase.iml" />
+    </modules>
+  </component>
+</project>

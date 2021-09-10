@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="materialtheme-javase" />
+        <module name="materialtheme-common" />
+        <module name="materialtheme-android" />
+        <module name="materialtheme-ios" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="materialtheme" target="1.8" />
+      <module name="materialtheme-android" target="1.8" />
+      <module name="materialtheme-common" target="1.8" />
+      <module name="materialtheme-ios" target="1.8" />
+      <module name="materialtheme-javase" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

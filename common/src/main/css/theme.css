@@ -1,0 +1,638 @@
+#Constants {
+    defaultSourceDPIInt: "0";
+    capsButtonTextBool: "true";
+    capsButtonUiids: "TextButton,OutlinedButton,ContainedButton";
+    defaultFontSizeInt: '18';
+    defaultFontSizeDesktopInt: '14';
+    rendererShowsNumbersBool: "false";
+    comboBoxUseMaterialArrowDropDownBool: "true";
+    infiniteDefaultColor: "ffffff";
+    --primary: 98, 0, 238;
+    --primaryVariant: 55, 0, 179;
+    --secondary: 3,218,198;
+    --secondaryVariant: #018786;
+    --background: 255, 255, 255;
+    --surface: 255, 255, 255;
+    --error: #b00020;
+    --on-primary: 255, 255, 255;
+    --on-secondary: 0,0,0;
+    --on-background:0,0,0;
+    --on-surface: 0,0,0;
+    --on-error: 0,0,0;
+
+}
+
+ContentPane {
+    background-color: rgb(var(--background));
+    surface: true;
+
+}
+
+Label {
+    background-color: transparent;
+    color: rgb(var(--on-surface));
+    font-size: 0.875rem;
+    font-family: "native:MainRegular";
+}
+
+Button, TextButton {
+    color: rgb(var(--primary));
+    text-align: center;
+    padding: 2mm 4mm;
+    margin: 1mm;
+    border: none;
+    font-family: "native:MainRegular";
+    font-size: 0.875rem;
+    background-color: transparent;
+}
+
+Button.selected, TextButton.selected {
+    background-color: transparent;
+    color: rgb(var(--primary));
+}
+
+Button.pressed, TextButton.pressed {
+    color: rgba(var(--on-surface), 0.38);
+    background-color: transparent;
+    border-radius: 1mm;
+    border:none;
+}
+
+Button.disabled, TextButton.disabled {
+    color: rgba(0, 0, 0, 0.37);
+    border: none;
+}
+
+OutlinedButton {
+    cn1-derive: TextButton;
+    border: 0.45pt solid rgb(var(--primary));
+    border-radius: 1mm;
+}
+
+OutlinedButton.pressed, OutlinedButton.selected {
+    border-radius: 1mm;
+    border: 0.45pt solid rgb(var(--primary));
+    background-color: rgba(var(--primary), 0.12);
+}
+
+OutlinedButton.disabled {
+    border: 0.45pt solid rgba(0, 0, 0, 0.37);
+}
+
+ContainedButton {
+    cn1-derive: TextButton;
+    background-color: rgb(var(--primary));
+    color: rgb(var(--on-primary));
+    border: 0px solid transparent;
+    border-radius: 1mm;
+    elevation: 2;
+}
+
+ContainedButton.selected {
+    background-color: rgb(var(--primary));
+    color: rgb(var(--on-primary));
+    border: 0px solid transparent;
+    border-radius: 1mm;
+
+}
+
+ContainedButton.pressed, ContainedButton.disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.38);
+    border: 0px solid transparent;
+    elevation:0;
+
+}
+
+/**
+ * ComboBox Styles ===================================
+ */
+
+/**
+ * Regular ComboBox
+ */
+/**
+ * The combobox itself.  Not the popup for it.
+ */
+ComboBox {
+    /** The color of the drop-down arrow */
+    color: rgba(var(--on-surface), 0.6);
+    background-color: rgba(var(--on-surface), 0.1);
+    font-family: "native:MainRegular";
+    font-size: 0.875rem;
+    border:none;
+    border-bottom: 0.45pt solid rgba(var(--on-surface), 0.8);
+
+
+
+}
+
+ComboBox.selected {
+    border-bottom: 1pt solid rgb(var(--primary));
+    color: rgb(var(--primary));
+
+}
+
+ComboBox.pressed {
+    color: rgb(var(--primary));
+}
+
+ComboBox.disabled {
+    /* TODO: Theme currently uses background image.  Need to change to use Material Icon
+            for background - which is renderered directly by the LookAndFeel, perhaps using
+            theme constant. */
+}
+
+/**
+ * The ComboBox Popup Dialog
+ */
+ComboBoxPopup {
+    cn1-derive: Dialog;
+    padding:0;
+}
+
+/**
+ * The List of options displayed in the ComboBox
+ * com.codename1.ui.List instance.
+ */
+ComboBoxList {
+    padding:0;
+    margin:0;
+}
+
+/**
+ * The ComboBox List item.
+ */
+ComboBoxItem {
+    margin: 0;
+    padding: 1rem 0.5rem;
+    background-color: transparent;
+    color: rgba(var(--on-surface), 0.6);
+
+}
+
+/** Outlined ComboBox **/
+
+/**
+ * The combobox itself.  Not the popup for it.
+ */
+OutlinedComboBox {
+    /** The color of the drop-down arrow */
+    color: rgba(var(--on-surface), 0.6);
+    background-color: transparent;
+    font-family: "native:MainRegular";
+    font-size: 0.875rem;
+    border-radius: 1mm;
+    border: 0.45pt solid rgba(var(--on-surface), 0.4);
+
+
+}
+
+OutlinedComboBox.selected {
+    border: 1pt solid rgb(var(--primary));
+    color: rgb(var(--primary));
+
+}
+
+OutlinedComboBox.pressed {
+    color: rgb(var(--primary));
+}
+
+OutlinedComboBox.disabled {
+    /* TODO: Theme currently uses background image.  Need to change to use Material Icon
+            for background - which is renderered directly by the LookAndFeel, perhaps using
+            theme constant. */
+}
+
+/**
+ * The ComboBox Popup Dialog
+ */
+OutlinedComboBoxPopup {
+    cn1-derive: Dialog;
+    padding:0;
+}
+
+/**
+ * The List of options displayed in the ComboBox
+ * com.codename1.ui.List instance.
+ */
+OutlinedComboBoxList {
+    padding:0;
+    margin:0;
+}
+
+/**
+ * The ComboBox List item.
+ */
+OutlinedComboBoxItem {
+    margin: 0;
+    padding: 1rem 0.5rem;
+    background-color: transparent;
+    color: rgba(var(--on-surface), 0.6);
+
+}
+
+/**
+ * The ComboBox "focused" overlay.
+ * The main thing here is the alpha of the background
+ * color as the renderer will use this as a hint of
+ * how transparent the selection mask should be.
+ */
+OutlinedComboBoxFocus {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+Command {
+    padding: 3mm;
+    border: none;
+    font-size: 0.875rem;
+    font-family: "native:MainRegular";
+    color: rgba(var(--on-surface), 0.7);
+    background-color:blue;
+
+}
+
+Command.selected, Command.pressed {
+    background-color: red;
+}
+
+
+PopupContentPane {
+    padding:0;
+    margin:0;
+}
+CommandList {
+    cn1-derive: DialogBody;
+    margin:0;
+    padding:0;
+}
+
+Container {
+    background: none;
+    background-color: transparent;
+}
+
+
+Dialog {
+    padding: 0;
+    /** TODO: The Border is an image border with a blue stripe along the top.
+        Probably need to move this into the Look and Feel.
+        We'll approximate it with a round-rect border for now. **/
+    background-color: rgb(var(--surface));
+    border-radius: 0.5mm;
+    border: 1px solid rgb(229, 229, 229);
+    surface: true;
+    elevation: 4;
+}
+DialogBody {
+    border: none;
+    background-color: transparent;
+    color: rgba(var(--on-surface), 0.3);
+}
+DialogButtonCommand {
+    cn1-derive: Button;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+    margin: 0;
+    border: none;
+
+}
+DialogCommandArea {
+    background-color: transparent;
+    border:none;
+}
+
+DialogContentPane {
+    margin: 2mm;
+    surface: true;
+}
+DialogTitle {
+    color: rgb(var(--on-surface));
+    background-color: transparent;
+    padding: 3mm 0 2mm 0;
+    margin: 0 2mm;
+    font-family: "native:MainBold";
+    font-size: 1.2rem;
+
+}
+Emblem {
+    color: #666666;
+    background-color: transparent;
+}
+ErrorLabel {
+    color: #ff1744;
+    padding: 0;
+    margin: 0 2.54mm 1.27mm 2.54mm;
+    border: none;
+    cn1-derive: FloatingHint;
+    font-family: "native:MainLight";
+    font-size: 2.2mm;
+
+}
+FloatingHint {
+    color: black;
+    padding: 0;
+    margin: 1.27mm 2.54mm 0 2.54mm;
+    border:none;
+    font-family: "native:MainLight";
+    font-size: 2.2mm;
+}
+
+FloatingHint.selected, FloatingHint.pressed {
+    color: #2962ff;
+}
+Form {
+    color: green;
+    background-color: rgb(var(--background));
+    surface: true;
+
+}
+
+
+InfiniteProgress {
+    background-color: transparent;
+}
+Menu {
+    cn1-derive: Dialog;
+}
+MenuButton {
+    background-color: transparent;
+    font-family: "native:MainRegular";
+    font-size: 3.5mm;
+}
+MultiButton {
+    margin: 0;
+    border-bottom: 1pt solid gray;
+}
+
+MultiButton.selected {
+    background-color: rgba(153, 204, 255, 1);
+}
+
+MultiButton.pressed {
+    background-color: rgba(115, 185, 255, 1);
+}
+
+MultiButton.disabled {
+
+}
+
+
+MultiLine1 {
+    background-color: transparent;
+    font-family: "native:MainRegular";
+    font-size: 3.5mm;
+}
+MultiLine2 {
+    color: #666666;
+    background-color: transparent;
+    font-family: "native:MainRegular";
+    font-size: 3mm;
+}
+MultiLine3 {
+    color: #666666;
+    background-color: transparent;
+}
+MultiLine4 {
+    color: #666666;
+    background-color: transparent;
+}
+
+RaisedButton {
+    color: black;
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 1mm 3.3mm 1.3mm 3mm;
+    margin: 1mm;
+    border: none;
+    border-radius: 0.4mm;
+    box-shadow: 0px 0px 10pt 0.3mm rgba(0,0,0,0.5);
+    cn1-derive: Button;
+
+
+}
+
+RaisedButton.selected {
+    background-color: #d5d5d5;
+}
+
+RaisedButton.pressed {
+    background-color: #d6d6d6;
+    padding: 0.5mm 3.8mm 1.8mm 2.5mm;
+    box-shadow: 0px 0px 10pt 0.8mm rgba(0,0,0,0.31);
+    border-radius: 0.4mm;
+
+}
+
+RaisedButton.disabled {
+    color: #a5a5a5;
+    background-color: #dfdfdf;
+}
+
+
+
+Slider {
+    /** TODO: Slider currently uses an image to render.  Need to change this to either rendering in
+        the look and feel, or the component itself. */
+}
+
+SliderFull {
+    /** TODO: Slider currently uses an image to render.  Need to change this to either rendering in
+            the look and feel, or the component itself. */
+}
+
+Spinner {
+    border: none;
+
+}
+
+SpinnerRenderer {
+    color: #b9b7b7;
+    border: none;
+}
+
+SpinnerRenderer.selected {
+    color: black;
+    padding: 4mm 3mm;
+    border: none;
+
+}
+
+SpinnerRendererFocus {
+    border: none;
+    border-top: 1pt solid rgb(102, 153, 255);
+    border-bottom: 1pt solid rgb(102, 153, 255);
+}
+
+SpinnerWrapper {
+    background-color: transparent;
+}
+Switch {
+    color: #ededed;
+    background-color: #9f9e9e;
+}
+
+Switch.selected {
+    color: #222c32;
+    background-color: #757e84;
+}
+
+Tab {
+    text-align: center;
+    padding: 3mm;
+    background-color: rgb(189, 189, 189);
+    border: 1mm solid rgb(204, 204, 204);
+
+}
+
+Tab.selected {
+    background-color: rgb(107, 185, 213);
+}
+
+Tab.pressed {
+    border-bottom: 1pt solid rgb(54, 193, 244);
+}
+TabContainer {
+    background-color: transparent;
+}
+Tabs {
+    background-color: transparent;
+}
+TextArea {
+    padding: 0.9mm 0;
+    margin: 1.27mm 2.54mm;
+    border: none;
+    border-bottom: 1pt solid black;
+    font-family: "native:MainLight";
+    font-size: 3.81mm;
+}
+
+TextArea.selected {
+    border: none;
+    border-bottom: 1pt solid rgb(41, 98, 255);
+}
+TextArea.disabled {
+    border-bottom: 1px solid rgb(174, 174, 174);
+}
+
+TextField {
+    padding: 0.9mm 0;
+    margin: 1.27mm 2.54mm;
+    border-bottom: 1pt solid black;
+    font-family: "native:MainLight";
+    font-size: 3.81mm;
+}
+TextField.selected {
+    border: none;
+    border-bottom: 1pt solid rgb(41, 98, 255);
+}
+
+TextField.disabled {
+    border-bottom: 1px solid rgb(174, 174, 174);
+}
+TextHint {
+    color: #999999;
+    margin: 1mm 2.54mm;
+    font-family: "native:MainLight";
+    font-size: 3.81mm;
+}
+Title {
+    background-color: transparent;
+    border:none;
+    text-align: left;
+    padding: 1mm 0;
+    margin: 0;
+    font-family: "native:MainRegular";
+    font-size: 4mm;
+    color: rgb(var(--on-primary));
+
+
+}
+
+TitleCommand {
+    color: rgb(var(--on-primary));
+    padding-left: 0;
+    margin-right: 0.875rem;
+}
+
+TitleArea {
+    padding: 2mm 2mm;
+    background-color: rgb(var(--primary));
+    border: none;
+    elevation: 4;
+}
+TitleCommand {
+    background: none;
+    background-color: transparent;
+    border:none;
+    font-family: "native:MainRegular";
+    font-size: 3.5mm;
+}
+ToggleButton {
+    cn1-derive: Button;
+    padding: 4mm;
+    border: 1pt solid transparent;
+    border-bottom: 1pt solid black;
+    /** TODO: Background image needs to be adapted */
+
+}
+
+ToggleButton.selected {
+    border: 1pt solid rgb(41, 163, 204);
+    background-color: rgb(142, 194, 214);
+    /** TODO: Background image needs to be adapted */
+}
+
+ToggleButton.pressed {
+    border: 1pt solid transparent;
+    border-bottom: 1pt solid rgb(51, 181, 229);
+
+}
+
+ToggleButton.disabled {
+    border-bottom: 1pt solid gray;
+}
+TouchCommand {
+    cn1-derive: Label;
+}
+
+SideNavigationPanel {
+    surface: true;
+    elevation: 8;
+    background-color: rgb(var(--surface));
+    padding:2mm;
+
+
+}
+
+SideCommand {
+    padding: 2mm;
+    color: rgba(var(--on-surface), 0.7);
+    font-family: "native:MainRegular";
+    font-size: 0.825rem;
+    icon-gap: 1.5rem;
+}
+
+SideCommandIcon {
+    cn1-derive: SideCommand;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+}
+
+SideCommand.selected, SideCommand.pressed {
+    background-color: rgba(var(--primary), 0.2);
+    color: rgba(var(--primary), 1.0);
+    border-radius: 1mm;
+}
+
+SideCommandIcon.pressed, SideCommandIcon.selected {
+    color: rgba(var(--primary), 1.0);
+    background-color: transparent;
+    border: none;
+
+}
+
+
